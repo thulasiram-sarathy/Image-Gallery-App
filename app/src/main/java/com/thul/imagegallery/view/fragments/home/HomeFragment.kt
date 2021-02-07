@@ -8,7 +8,7 @@ import com.thul.imagegallery.R
 import dagger.hilt.android.AndroidEntryPoint
 
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.home_fragment) {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
