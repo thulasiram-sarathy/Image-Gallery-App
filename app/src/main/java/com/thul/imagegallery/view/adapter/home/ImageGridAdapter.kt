@@ -10,20 +10,22 @@ import com.squareup.picasso.Picasso
 import com.thul.imagegallery.R
 import com.thul.imagegallery.model.ImageData
 import com.thul.imagegallery.utils.GridImageView
+import com.thul.imagegallery.utils.OnImageClickListener
 import java.util.*
 import kotlin.collections.ArrayList
 
 
-class ImageGridAdapter(imageItems: List<ImageData>?) : RecyclerView.Adapter<ImageGridAdapter.renewalViewHolder>() {
+class ImageGridAdapter(imageItems: List<ImageData>?, onImageClickListener : OnImageClickListener) : RecyclerView.Adapter<ImageGridAdapter.renewalViewHolder>() {
 
   private var list = ArrayList<ImageData>()
-
+  var listener : OnImageClickListener? = null
   val imagesList = ArrayList(imageItems)
 
   private lateinit var context: Context
 
   init {
     this.list = imagesList
+    this.listener = onImageClickListener
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): renewalViewHolder {
@@ -43,6 +45,9 @@ class ImageGridAdapter(imageItems: List<ImageData>?) : RecyclerView.Adapter<Imag
   override fun onBindViewHolder(holder: renewalViewHolder, position: Int) {
     val data = list[position]
     loadPhoto(holder.gridImage,data.url)
+    holder.itemView.setOnClickListener {
+      listener?.OnImageClick(data,position)
+    }
   }
 
   fun renewalNotify(cardItems: List<ImageData>) {
