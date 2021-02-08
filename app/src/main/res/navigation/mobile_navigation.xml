@@ -9,6 +9,18 @@
     android:id="@+id/homeFragment"
     android:name="com.thul.imagegallery.view.fragments.home.HomeFragment"
     android:label="homeFragment">
+    <action
+        android:id="@+id/imageDetailAction"
+        app:destination="@id/imageDetailFragment" />
+  </fragment>
+
+  <fragment
+      android:id="@+id/imageDetailFragment"
+      android:name="com.thul.imagegallery.view.fragments.detail.DetailFragment"
+      android:label="imageDetailFragment">
+    <argument
+        android:name="count"
+        app:argType="integer" />
   </fragment>
 
 </navigation>
