@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.thul.imagegallery.R
@@ -44,13 +45,21 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
 
   override fun onBindViewHolder(holder: renewalViewHolder, position: Int) {
     val data = list[position]
+    loadPhoto(holder.mainImage,data.hdurl)
   }
 
 
   class renewalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+    var mainImage = itemView.findViewById<AppCompatImageView>(R.id.mainImage)!!
 
   }
 
-
+  private fun loadPhoto(imageView: AppCompatImageView, url: String?) {
+    Picasso.get()
+      .load(url)
+      .fit()
+      .centerCrop()
+      .placeholder(R.drawable.grid_placeholder)
+      .into(imageView)
+  }
 }
