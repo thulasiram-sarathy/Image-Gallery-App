@@ -15,7 +15,11 @@
         app:cardBackgroundColor="#fff"
         app:cardCornerRadius="2dp"
         app:cardUseCompatPadding="true">
-        
 
+        <com.thul.imagegallery.utils.GridImageView
+            android:id="@+id/gridImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"/>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
