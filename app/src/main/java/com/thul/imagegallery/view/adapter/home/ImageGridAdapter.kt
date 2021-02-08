@@ -45,7 +45,7 @@ class ImageGridAdapter(imageItems: List<ImageData>?, onImageClickListener : OnIm
   override fun onBindViewHolder(holder: renewalViewHolder, position: Int) {
     val data = list[position]
     loadPhoto(holder.gridImage,data.url)
-    holder.itemView.setOnClickListener {
+    holder.gridImage.setOnClickListener {
       listener?.OnImageClick(data,position)
     }
   }
