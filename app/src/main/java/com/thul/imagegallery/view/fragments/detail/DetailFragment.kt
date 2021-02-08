@@ -23,6 +23,7 @@ import kotlin.math.abs
 @AndroidEntryPoint
 class DetailFragment : Fragment(R.layout.detail_fragment), OnImageClickListener {
     private val animate = false
+    private var count = 0
     private val viewModel: HomeViewModel by activityViewModels()
     private val animator = ViewPager2.PageTransformer { page, position ->
         page.apply {
@@ -33,10 +34,11 @@ class DetailFragment : Fragment(R.layout.detail_fragment), OnImageClickListener 
         }
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        count = arguments?.getInt("count")!!
         val adapter = DetailViewAdapter(viewModel.imageGalleryList,this)
         viewpager.setPageTransformer(animator)
         viewpager.adapter = adapter
-        viewpager.setCurrentItem(1, false)
+        viewpager.setCurrentItem(count, false)
     }
 
     override fun OnImageClick(imageData: ImageData, position: Int) {
