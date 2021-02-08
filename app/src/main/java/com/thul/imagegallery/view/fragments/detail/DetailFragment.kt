@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.home_fragment.*
 
 
 @AndroidEntryPoint
-class DetailFragment : Fragment(R.layout.home_fragment) {
+class DetailFragment : Fragment(R.layout.detail_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     }
