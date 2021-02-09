@@ -1,6 +1,7 @@
 package com.thul.imagegallery.view.adapter.detail
 
 import android.content.Context
+import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -99,7 +100,7 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
   }
   private fun loadTextView(textView: TextView, text: String?) {
     if(text != null){
-      textView.text = text
+      textView.text = Html.fromHtml(text)
     }
 
   }
