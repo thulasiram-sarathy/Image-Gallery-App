@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
-    sothree:umanoPanelHeight="68dp"
+    sothree:umanoPanelHeight="50dp"
     sothree:umanoShadowHeight="4dp"
     sothree:umanoParallaxOffset="100dp"
     sothree:umanoDragView="@+id/dragView"
     sothree:umanoOverlay="true"
+    android:background="@android:color/transparent"
     sothree:umanoScrollableView="@+id/list">
 
     <!-- MAIN CONTENT -->
@@ -40,10 +41,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ffffff"
+
         android:orientation="vertical"
         android:clickable="true"
         android:focusable="false"
+        android:background="@drawable/curve_top_bg"
         android:id="@+id/dragView">
 
         <LinearLayout
@@ -54,7 +56,7 @@
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/pullImage"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="50dp"
                 android:src="@drawable/ic_baseline_arrow_drop_up_24" />
 
         </LinearLayout>
@@ -68,48 +70,303 @@
 
         <LinearLayout
             android:id="@+id/list"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:padding="5dp"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/item_orderId"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true">
 
-                android:text="Order id #####"
-                android:textColor="#0068e0"
-                android:ellipsize="end"
-                android:maxLines="1"/>
+                <RelativeLayout
+                    android:id="@+id/imageLayout0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:id="@+id/item_lists"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Missed Call IVR, Domain, SSL..."
-                    />
-                <TextView
-                    android:id="@+id/item_count"
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="6dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_title_24" />
+
+                </RelativeLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+1 more"
-                    />
+                    android:layout_marginStart="13dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageLayout0"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="1.3sp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="NASA"
+                        android:textColor="#000"
+                        android:textFontWeight="400"
+                        android:fontFamily="@font/open_sans"
+                        android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/item_date"
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E4E4E4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="24-Dec-2019  (20:30)"
-                android:ellipsize="end"
-                android:maxLines="1" />
+                android:clickable="true"
+                android:focusable="true">
+
+                <RelativeLayout
+                    android:id="@+id/imageLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="6dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_copyright_24" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageLayout"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/copyright"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="1.3sp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="NASA"
+                        android:textColor="#000"
+                        android:textFontWeight="400"
+                        android:fontFamily="@font/open_sans"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/dummy_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E4E4E4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true">
+
+                <RelativeLayout
+                    android:id="@+id/imageLayout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="6dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_calendar_today_24" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageLayout2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="1.3sp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="Date"
+                        android:textColor="#000"
+                        android:textFontWeight="400"
+                        android:fontFamily="@font/open_sans"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E4E4E4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true">
+
+                <RelativeLayout
+                    android:id="@+id/imageLayout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:padding="6dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_baseline_info_24" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="13dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imageLayout1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="1.3sp"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:text="Description"
+                        android:textColor="#000"
+                        android:textFontWeight="400"
+                        android:fontFamily="@font/open_sans"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E4E4E4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
 
