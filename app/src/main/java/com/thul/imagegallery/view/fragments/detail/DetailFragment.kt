@@ -38,7 +38,7 @@ class DetailFragment : Fragment(R.layout.detail_fragment), OnImageClickListener 
         val adapter = DetailViewAdapter(viewModel.imageGalleryList,this)
         viewpager.setPageTransformer(animator)
         viewpager.adapter = adapter
-        viewpager.setCurrentItem(count, false)
+        viewpager.setCurrentItem(count, true)
     }
 
     override fun OnImageClick(imageData: ImageData, position: Int) {
