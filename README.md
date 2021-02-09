@@ -7,6 +7,10 @@ Image Gallery app is developed using Kotlin and has multiple libraries and archi
 <img src="https://github.com/thulasiram-sarathy/Image-Gallery-App/blob/main/Screenshots/demo_animation.gif" width="250" style="max-width:100%;">  
 </br></br>
 
+## Download link
+
+<a href="https://github.com/thulasiram-sarathy/Image-Gallery-App/blob/main/app/release/app-release.apk">Image Gallery App</a>
+
 ## Getting started
 
 ### Setting up the dependency
