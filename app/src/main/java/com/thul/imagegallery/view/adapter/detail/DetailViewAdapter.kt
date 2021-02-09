@@ -15,6 +15,8 @@ import com.thul.imagegallery.R
 import com.thul.imagegallery.model.ImageData
 import com.thul.imagegallery.utils.GridImageView
 import com.thul.imagegallery.utils.OnImageClickListener
+import java.text.ParseException
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -51,7 +53,8 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
     loadPhoto(holder.mainImage,data.hdurl)
     loadTextView(holder.title,data.title)
     loadTextView(holder.copyright,data.copyright)
-    loadTextView(holder.date,data.date)
+//    loadTextView(holder.date,data.date)
+    dateConverter(holder,position)
     loadTextView(holder.description,data.explanation)
     holder.mLayout!!.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener {
       override fun onPanelSlide(panel: View?, slideOffset: Float) {
@@ -100,7 +103,19 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
     }
 
   }
+  private fun dateConverter(holder: renewalViewHolder, position: Int){
+    val input = SimpleDateFormat("yyyy-MM-dd")
+        val output = SimpleDateFormat("dd MMMM yyyy")
+
+        var d: Date? = null
+        try {
+            d = input.parse(list.get(position).date)
+            holder.date.setText(output.format(d))
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+  }
   companion object {
-    private const val TAG = "DemoActivity"
+    private const val TAG = "DetailViewAdapter"
   }
 }
