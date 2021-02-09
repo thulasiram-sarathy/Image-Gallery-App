@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.thul.imagegallery"
-        minSdkVersion 16
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -35,6 +35,11 @@ android {
     }
     dataBinding {
         enabled = true
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -95,7 +100,8 @@ dependencies {
     androidTestImplementation "io.mockk:mockk-android:$mockk_version"
     testImplementation 'junit:junit:4.+'
     testImplementation "com.spotify.mobius:mobius-test:$mobius_version"
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }

@@ -9,13 +9,10 @@ import java.time.format.DateTimeFormatter
 class DateComparator {
 
     companion object : Comparator<ImageData> {
-
-        @RequiresApi(Build.VERSION_CODES.O)
         override fun compare(a: ImageData, b: ImageData): Int  {
                 var firstImage = a.date!!.dateFormat()
                 var secondImage = b.date!!.dateFormat()
-            return if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                when {
+            return when {
                     firstImage.isBefore(secondImage) -> {
                         1
                     }
@@ -26,9 +23,6 @@ class DateComparator {
                         0
                     }
                 }
-            } else {
-                TODO("VERSION.SDK_INT < O")
-            }
 
         }
     }
