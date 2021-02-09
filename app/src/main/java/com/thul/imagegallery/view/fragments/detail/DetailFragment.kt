@@ -22,12 +22,12 @@ import kotlin.math.abs
 
 @AndroidEntryPoint
 class DetailFragment : Fragment(R.layout.detail_fragment), OnImageClickListener {
-    private val animate = false
+    private val flag = false
     private var count = 0
     private val viewModel: HomeViewModel by activityViewModels()
     private val animator = ViewPager2.PageTransformer { page, position ->
         page.apply {
-            translationY = if (animate) abs(position) * 500f else 0f
+            translationY = if (flag) abs(position) * 500f else 0f
             translationX = 0f
             scaleX = 1f
             scaleY = 1f
