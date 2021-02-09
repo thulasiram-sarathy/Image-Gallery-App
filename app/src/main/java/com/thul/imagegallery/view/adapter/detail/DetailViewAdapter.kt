@@ -101,6 +101,8 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
   private fun loadTextView(textView: TextView, text: String?) {
     if(text != null){
       textView.text = Html.fromHtml(text)
+    }else{
+      textView.text = "-"
     }
 
   }
