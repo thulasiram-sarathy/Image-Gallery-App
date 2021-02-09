@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
@@ -48,6 +49,10 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
   override fun onBindViewHolder(holder: renewalViewHolder, position: Int) {
     val data = list[position]
     loadPhoto(holder.mainImage,data.hdurl)
+    loadTextView(holder.title,data.title)
+    loadTextView(holder.copyright,data.copyright)
+    loadTextView(holder.date,data.date)
+    loadTextView(holder.description,data.explanation)
     holder.mLayout!!.addPanelSlideListener(object : SlidingUpPanelLayout.PanelSlideListener {
       override fun onPanelSlide(panel: View?, slideOffset: Float) {
         Log.i(TAG, "onPanelSlide, offset " + slideOffset);
@@ -74,6 +79,10 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
   class renewalViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     var mainImage = itemView.findViewById<AppCompatImageView>(R.id.mainImage)!!
     var mLayout = itemView.findViewById<SlidingUpPanelLayout>(R.id.sliding_layout)!!
+    var date= itemView.findViewById<TextView>(R.id.date)!!
+    var description= itemView.findViewById<TextView>(R.id.description)!!
+    var title= itemView.findViewById<TextView>(R.id.title)!!
+    var copyright= itemView.findViewById<TextView>(R.id.copyright)!!
 
   }
 
@@ -84,6 +93,12 @@ class DetailViewAdapter(imageItems: List<ImageData>?, onImageClickListener : OnI
       .centerCrop()
       .placeholder(R.drawable.grid_placeholder)
       .into(imageView)
+  }
+  private fun loadTextView(textView: TextView, text: String?) {
+    if(text != null){
+      textView.text = text
+    }
+
   }
   companion object {
     private const val TAG = "DemoActivity"

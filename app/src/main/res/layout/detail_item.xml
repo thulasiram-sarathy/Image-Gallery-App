@@ -337,7 +337,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="1.3sp"
-                        android:maxLines="2"
+                        android:maxLines="6"
                         android:ellipsize="end"
                         android:text="Description"
                         android:textColor="#000"
